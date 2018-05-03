@@ -1,0 +1,37 @@
+body{
+    font-family: Ubuntu;
+}
+
+form{
+    text-align: center;
+    position: relative;
+    top: 400px;
+}
+
+input{
+    height: 25px;
+    margin: 5px 0;
+}
+
+#valid, #anon{
+    height: 35px;
+    border-radius: 10px;
+    border-style: none;
+    background-color: #eee;
+    box-shadow: rgba(0,0,0,0.7) 0 1px 3px 0;
+    margin-top: 8px;
+}
+
+#valid:active , #anon:active {
+    box-shadow: rgba(0,0,0,0) 0 0 0 0;
+}
+
+.err{
+    color: red;
+    background-color: #eee;
+    box-shadow: rgba(0,0,0,0.7) 0 1px 3px 0;
+    position: absolute;
+    text-align: center;
+}
+
+
