@@ -1,11 +1,11 @@
 body{
-    font-family: Ubuntu;
+    font-family: Ubuntu, cursive;
 }
 
 form{
     text-align: center;
     position: relative;
-    top: 400px;
+    top: 350px;
 }
 
 input{
@@ -30,8 +30,10 @@ input{
     color: red;
     background-color: #eee;
     box-shadow: rgba(0,0,0,0.7) 0 1px 3px 0;
-    position: absolute;
+    position: relative;
     text-align: center;
+    padding: 1px;
+    border-radius: 5px;
 }
 
 

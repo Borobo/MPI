@@ -2,17 +2,24 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Type" content="text/html"; charset="utf-8" />
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
     <title>Formulaire</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 
+
+</head>
 <body>
 
 <?php
 
-if(!isset($_SESSION['login'])) {
+include("./includes/id.php");
+include("./includes/function.php");
+include("./includes/const.php");
+
+if(!isset($_POST['login']))
+{
     echo '
-        <form method="post" action="../back.php">
+        <form method="post">
             <input id="log" name="login" type="text" placeholder="Login">
             <br/>
             <input id="mdp" name="mdp" type="password" placeholder="Mot de passe">
@@ -22,6 +29,7 @@ if(!isset($_SESSION['login'])) {
             <input id="anon" name="anon" type="submit" value="Continuer sans se connecter">
     
         </form>';
+    echo 'login : ' .$_POST['login']. ' <br/> passwd : ' .$_POST['mdp'];
 }
 
 else
@@ -31,6 +39,7 @@ else
     {
         erreur(ERR_CH);
     }
+
     else
     {
         $usr = SQLGetChamp("SELECT passwd FROM users WHERE nom_usr = " .$_POST['login'].
@@ -38,5 +47,8 @@ else
         $id = $usr;
         $mess = ($usr == 1)? '<p>Vous êtes connecté !</p>' : '<div class="err">Mauvais mdp ou login</div>';
     }
-    echo $mess.'</div></body></html>'
+
+    echo $mess.'</body></html>';
+    echo 'login : ' .$_POST['login']. ' <br/> passwd : ' .$_POST['mdp'];
+    SQLSelect("SELECT * FROM users");
 }

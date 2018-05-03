@@ -8,5 +8,6 @@
 
 $BDD_host="localhost";
 $BDD_user="root";
-$BDD_password="phpmyadmin"; // vide sous windows
+$BDD_password="phpmyadmin";
 $BDD_base="Access_score";
+
